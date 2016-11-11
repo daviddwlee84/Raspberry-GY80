@@ -3,7 +3,7 @@
 
 BMP085::BMP085(void)
 {
-	if(!init(ULTRAHIGHRES)) printf("BMP085 initialize failed");
+	if(!init(ULTRAHIGHRES)) fprintf(stderr, "BMP085 initialize failed");
 }
 
 bool BMP085::init(uint8_t mode)

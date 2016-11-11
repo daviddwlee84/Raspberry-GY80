@@ -32,7 +32,7 @@ class L3G4200D
 		L3G4200D();
 		L3G4200D(int);
 
-		void init(int);
+		bool init(int);
 		void update();
 		float getGyroX(){ return gyro_x; }
 		float getGyroY(){ return gyro_y; }

@@ -92,7 +92,7 @@ typedef enum
 	IDLE          = 0b10,
 	SINGLE        = 0b01, // Default
 	CONTINOUS     = 0b00
-} mode_t;
+} opt_mode_t;
 
 // 3 axis digital compass
 class HMC5883L
@@ -120,8 +120,8 @@ class HMC5883L
 		void setRange(range_t);
 		range_t getRange(void);
 
-		void setMeasurementMode(mode_t);
-		mode_t getMeasurementMode(void);
+		void setMeasurementMode(opt_mode_t);
+		opt_mode_t getMeasurementMode(void);
 
 		void setDataRate(dataRate_t);
 		dataRate_t getDataRate(void);

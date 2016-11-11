@@ -102,7 +102,7 @@ range_t HMC5883L::getRange(void)
 	return (range_t)((readReg8(REG_CONFIG_B) >> 5));
 }
 
-void HMC5883L::setMeasurementMode(mode_t mode)
+void HMC5883L::setMeasurementMode(opt_mode_t mode)
 {
 	int value;
 
@@ -113,14 +113,14 @@ void HMC5883L::setMeasurementMode(mode_t mode)
 	writeReg8(REG_MODE, value);
 }
 
-mode_t HMC5883L::getMeasurementMode(void)
+opt_mode_t HMC5883L::getMeasurementMode(void)
 {
 	int value;
 
 	value = readReg8(REG_MODE);
 	value &= 0b00000011;
 
-	return (mode_t)value;
+	return (opt_mode_t)value;
 }
 
 void HMC5883L::setDataRate(dataRate_t dataRate)

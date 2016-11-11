@@ -1,3 +1,4 @@
+#include <stdlib.h> // for system("CLEAR")
 #include <iostream> // for cout
 #include <unistd.h> // for usleep()
 #include "../include/GY80.h"
@@ -16,13 +17,22 @@ int main()
 	BMP085 d;
 	while(1){
 		a.update();
+		cout << "ADXL345 Acc :";
 		cout << a.getAccX() << " " << a.getAccY() << " " <<  a.getAccZ() << endl;
+
 		b.update();
+		cout << "L3G4200D Gyro :";
 		cout << b.getGyroX() << " " << b.getGyroY() << " " <<  b.getGyroZ() << endl;
+
 		c.update(true);
+		cout << "HMC5883L Comp :";
 		cout << c.getCompX() << " " << c.getCompY() << " " << c.getCompZ() << endl;
-		cout << d.readTemperature() << "*C " << d.readPressure() << "Pa " << d.readSealevelPressure() << "Pa " << d.readAltitude() << "meters " << d.readRawTemperature() << " " << d.readRawPressure() << endl;
-		sleep(1);
+
+		cout << "BMP085 Pre:";
+		cout << d.readTemperature() << "*C " << d.readPressure() << "Pa " << d.readSealevelPressure() << "Pa " << d.readAltitude() << "meters " << endl; 
+		usleep(100000);
+		//sleep(1);
+		system("clear");
 	}
 	return 0;
 }	
